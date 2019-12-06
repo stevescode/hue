@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @author stevescode
+ * @link http://www.phpdoc.org/docs/latest/index.html
+ */
+
 include 'vars.php';
 
 function checkBulb($theBulb) {

@@ -3,6 +3,7 @@
 /**
  * @author stevescode
  * @link http://www.phpdoc.org/docs/latest/index.html
+ * This script just sets the Lounge to correct evening settings - this needs expanding.
  */
 
 include 'vars.php';

@@ -3,6 +3,7 @@
 /**
  * @author stevescode
  * @link http://www.phpdoc.org/docs/latest/index.html
+ * Writes motion detection to database for long term storage
  */
 
 include 'vars.php';

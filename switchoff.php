@@ -3,6 +3,9 @@
 /**
  * @author stevescode
  * @link http://www.phpdoc.org/docs/latest/index.html
+ * Includes functions for checking bulb status, checking if there's movement, turning off bulbs, and some logic to bring these things together
+ * to perform actions
+ * 
  */
 
 include 'vars.php';

@@ -21,7 +21,7 @@ var websocket;
 
 function ws_connect(){
 
-    var url = 'ws://192.168.100.160:8088/ws/spc?username=***&password=***';
+    var url = 'ws://192.168.100.160:8088/ws/spc?username=ws_user&password=ws_pwd';
 	websocket = new WebSocket(url);
 	websocket.onmessage = function(ev) {
 		// Parse received data
@@ -34,14 +34,26 @@ function ws_connect(){
 		if (sia_code.includes("Z")) {
 
 			if (desc.includes("Lounge")) {
+
 				$.get( "switchon.php?action=overhead" );
+				writeToScreen('Lounge overhead triggered<br />');
+
 				$.get( "switchon.php?action=behindTV" );
+				writeToScreen('Lounge behindTV triggered<br />');
+
 				$.get( "database.php?table=activity&sensor=lounge");
 		  	}
 	  		else if (desc.includes("Kitchen")) {
 				$.get( "database.php?table=activity&sensor=kitchen");
 		  	}
 		  	else if (desc.includes("Downstairs")) {
+		  		
+				$.get( "switchon.php?action=downstairshall1" );
+				writeToScreen('downstairshall 1 triggered<br />');
+
+				$.get( "switchon.php?action=downstairshall2" );
+				writeToScreen('downstairshall 2 triggered<br />');
+
 				$.get( "database.php?table=activity&sensor=downstairshall");
 		  	}
 		  	else if (desc.includes("Upstairs")) {

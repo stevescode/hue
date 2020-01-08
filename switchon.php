@@ -36,8 +36,29 @@ function activeLights($light) {
 			$bulb = 9;
 	}
 
+	elseif ($light == 'downstairshall1') {
+			$arrData['on'] = true;
+			$arrData['bri'] = 254;
+			$arrData['hue'] = 14988;
+			$arrData['sat'] = 141;
+			$arrData['effect'] = none;
+			$arrData['xy'] = [0.4575,0.4101];
+			$arrData['ct'] = 366;
+			$bulb = 1;
+	}
+
+	elseif ($light == 'downstairshall2') {
+			$arrData['on'] = true;
+			$arrData['bri'] = 254;
+			$arrData['hue'] = 14988;
+			$arrData['sat'] = 141;
+			$arrData['effect'] = none;
+			$arrData['xy'] = [0.4575,0.4101];
+			$arrData['ct'] = 366;
+			$bulb = 4;
+	}
+
 	$data = json_encode($arrData);
-	echo $data;
 
 	$url = "http://".$hueIp."/api/".$hueApi."/lights/".$bulb."/state";
 
@@ -55,7 +76,6 @@ exit;
 }
 
 if($action) {
-	echo "we're in action";
   
 activeLights($action);
 

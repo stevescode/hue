@@ -112,15 +112,15 @@ function identifyBulbs($theRoom) {
 }
 
 function logToDisk($data) {
-		$localfile = fopen('logs/logs.log', 'a');
+		$localfile = fopen('/var/www/html/lights/logs/logs.log', 'a');
 		fwrite($localfile, $data);
-		fclose('logs/logs.log');
+		fclose($localfile);
 }
 
 foreach ($arrayOfRooms as $room) {
 	if (checkMovement($room, $timeToLightsOff) == 1) {
 		// We've found movement for this $room stored in the database, we do nothing
-		$log = $loggingStart.' Database check shows movement, doing nothing '.$loggingEnd;
+		$log = $loggingStart.' Database check shows movement in '.$room.', doing nothing '.$loggingEnd;
 		logToDisk($log);
 	}
 	else {

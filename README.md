@@ -18,7 +18,7 @@ Currently - index.php builds a webpage that displays movements and calls various
 ## Hacky notes
 
 crontab -e output:
-* * * * * php /var/www/html/lights/roomsweeper.php
+\* \* \* \* \* php /var/www/html/lights/roomsweeper.php
 14 * * * * /usr/sbin/logrotate /root/logrotate.conf --state /root/logrotate-state
 
 runs roomsweeper every minute which enables light off commands at set frequency
